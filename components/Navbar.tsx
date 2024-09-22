@@ -1,6 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import MobileNav from "./MobileNav"
+import { SignedIn, UserButton } from "@clerk/nextjs"
 
 export default function Navbar() {
   return (
@@ -9,7 +10,10 @@ export default function Navbar() {
         <Image src='/icons/logo.svg' alt='Logo' width={32} height={32} className="max-sm:size-10" />
         <p className="text-[26px] font-extrabold text-white max-sm:hidden">Yoom</p>
       </Link>
-      <div className="flex-between gap-5 lg:hidden">
+      <div className="flex-between gap-5">
+        <SignedIn>
+          <UserButton />
+        </SignedIn>
         <MobileNav />
       </div>
     </nav>

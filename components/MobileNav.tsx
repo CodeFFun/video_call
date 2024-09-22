@@ -15,7 +15,7 @@ import { cn } from "@/lib/utils";
 export default function MobileNav() {
   const pathName = usePathname();
   return (
-    <section className="w-full max-w-[264px]">
+    <section className="w-full max-w-[264px] lg:hidden">
       <Sheet>
         <SheetTrigger asChild>
           <Image
